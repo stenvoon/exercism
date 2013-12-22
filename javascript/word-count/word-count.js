@@ -8,10 +8,9 @@ module.exports = function Words(words) {
 	var frequencies = function(result, word) {
 		result.hasOwnProperty(word) ? result[word]++ : result[word] = 1;
 		return result;
-	}
+	};
 
 	var parts = sanitize(words).split(/\s+/);
 	return parts.reduce(frequencies, {});
-
 };
 
