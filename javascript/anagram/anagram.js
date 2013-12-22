@@ -6,9 +6,10 @@ module.exports = function Anagram(word) {
 	};
 
 	var match = function(words) {
+		var lowerCaseWord = word.toLowerCase();
+
 		return words.filter(function(value) {
 			var lowerCaseValue = value.toLowerCase();
-			var lowerCaseWord = word.toLowerCase();
 			return lowerCaseValue !== lowerCaseWord &&
 			 		 alphabetize(lowerCaseValue) === alphabetize(lowerCaseWord);
 		});
