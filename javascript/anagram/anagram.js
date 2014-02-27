@@ -1,4 +1,4 @@
-module.exports = function Anagram(word) {
+module.exports = function (word) {
 	"use strict";
 
 	var alphabetize = function(word) {
