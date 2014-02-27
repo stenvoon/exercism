@@ -1,4 +1,4 @@
-module.exports = function Words(words) {
+module.exports = function (words) {
 	"use strict";
 
 	var sanitize = function(words) {
