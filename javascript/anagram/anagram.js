@@ -1,8 +1,8 @@
 module.exports = function (word) {
 	"use strict";
 
-	var alphabetize = function(word) {
-		return word.split('').sort().join('');
+	var alphabetize = function(input) {
+		return input.split('').sort().join('');
 	};
 
 	var match = function(words) {
