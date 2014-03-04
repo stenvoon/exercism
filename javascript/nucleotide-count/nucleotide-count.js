@@ -1,7 +1,8 @@
 module.exports = function DNA(sequence) {
 	"use strict";
 
-	var nucleotideCounts = countNucleotides(sequence);
+	var nucleotideCounts = countNucleotides(sequence),
+		 validNucleotides = "ATCGU";
 
 	function calculateCounts (currentCounts, value) {
 		currentCounts[value]++;
@@ -15,7 +16,7 @@ module.exports = function DNA(sequence) {
 	};
 
 	function count (nucleotide) {
-		if ("ATCGU".indexOf(nucleotide) === -1) throw new Error("Invalid Nucleotide");
+		if (validNucleotides.indexOf(nucleotide) === -1) throw new Error("Invalid Nucleotide");
 		return nucleotideCounts[nucleotide] || 0;
 	};
 
