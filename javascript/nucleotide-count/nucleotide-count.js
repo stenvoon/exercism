@@ -1,9 +1,21 @@
-var DNA = function(sequence) {
+module.exports = function DNA(sequence) {
+	"use strict";
 
-	var nucleotideCounts = { A : 0, T : 0, C : 0, G : 0 };
+	var nucleotideCounts = countNucleotides(sequence);
 
-	var count = function(nucleotide) {
-		return 0;
+	function calculateCounts (currentCounts, value) {
+		currentCounts[value]++;
+		return currentCounts;
+	};
+
+	function countNucleotides (sequence) {
+		return sequence
+				 .split('')
+				 .reduce(calculateCounts, { A : 0, T : 0, C : 0, G : 0 });
+	};
+
+	function count (nucleotide) {
+		return nucleotideCounts[nucleotide] || 0;
 	};
 
 	return { 
@@ -13,4 +25,3 @@ var DNA = function(sequence) {
 
 };
 
-module.exports = DNA;
