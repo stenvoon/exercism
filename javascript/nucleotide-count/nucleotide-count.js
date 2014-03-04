@@ -15,6 +15,7 @@ module.exports = function DNA(sequence) {
 	};
 
 	function count (nucleotide) {
+		if ("ATCGU".indexOf(nucleotide) === -1) throw new Error("Invalid Nucleotide");
 		return nucleotideCounts[nucleotide] || 0;
 	};
 
