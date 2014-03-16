@@ -1,20 +1,8 @@
 var Bob = function() {
 
-	var hey = function(greeting) {
-		if (silence(greeting)) {
-			return 'Fine. Be that way!';
-		} else if (shouting(greeting)) {
-			return 'Woah, chill out!'
-		} else if (askingAQuestion(greeting)) {
-			return 'Sure.';
-		} else {
-			return 'Whatever.';
-		}
-	};
-
 	var silence = function(input) {
 		return /^\s*$/.test(input);
-	}
+	};
 
 	var shouting = function(input) {
 		var isUpperCase = function(input) {
@@ -30,6 +18,17 @@ var Bob = function() {
 
 	var askingAQuestion = function(input) {
 		return /\?$/.test(input);
+	};
+
+	var hey = function(greeting) {
+		if (silence(greeting)) {
+			return 'Fine. Be that way!';
+		} else if (shouting(greeting)) {
+			return 'Woah, chill out!';
+		} else if (askingAQuestion(greeting)) {
+			return 'Sure.';
+		}		
+		return 'Whatever.';
 	};
 
 	return { hey : hey };
