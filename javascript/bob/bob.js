@@ -21,13 +21,10 @@ var Bob = function() {
 	};
 
 	var hey = function(greeting) {
-		if (silence(greeting)) {
-			return 'Fine. Be that way!';
-		} else if (shouting(greeting)) {
-			return 'Woah, chill out!';
-		} else if (askingAQuestion(greeting)) {
-			return 'Sure.';
-		}		
+		if (silence(greeting)) return 'Fine. Be that way!';
+		if (shouting(greeting)) return 'Woah, chill out!';
+		if (askingAQuestion(greeting)) return 'Sure.';
+
 		return 'Whatever.';
 	};
 
