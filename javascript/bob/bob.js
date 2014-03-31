@@ -16,14 +16,14 @@ var Bob = function() {
 		return isUpperCase(input) && containsAnyLetters(input);
 	};
 
-	var askingAQuestion = function(input) {
+	var questioning = function(input) {
 		return /\?$/.test(input);
 	};
 
 	var hey = function(greeting) {
 		if (silence(greeting)) return 'Fine. Be that way!';
 		if (shouting(greeting)) return 'Woah, chill out!';
-		if (askingAQuestion(greeting)) return 'Sure.';
+		if (questioning(greeting)) return 'Sure.';
 
 		return 'Whatever.';
 	};
