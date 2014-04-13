@@ -1,4 +1,5 @@
 module.exports = function(sequence) {
+	"use strict";
 
 	function shortest(a, b) {
 		return a.length < b.length ? a.length : b.length;
