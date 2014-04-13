@@ -1,17 +1,17 @@
 module.exports = function(number) {
 	"use strict";
 
-	function clean(number){ 
+	function clean(number){
 		var cleaned = number.replace(/[\(\)-\s\.]/g, '');
+
 		if (cleaned.length == 11) {
-			if (cleaned[0] === '1') {
-				cleaned = cleaned.substr(1, 10);
-			} else {
-				cleaned = "0000000000";
-			}
-		} else if (cleaned.length == 9) {
-			cleaned = "0000000000";
+			return cleaned[0] === '1' ? cleaned.substr(1) : "0000000000";
 		}
+
+		if (cleaned.length < 10) {
+			return "0000000000";
+		}
+		
 		return cleaned;
 	}
 
