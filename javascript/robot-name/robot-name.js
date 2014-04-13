@@ -1,5 +1,7 @@
-module.exports = function() {
+module.exports = function Robot() {
 	"use strict";
+
+	var name = "";
 
 	function randomBetween(min, max) {
 		return Math.floor(Math.random() * (max - min + 1) + min);
@@ -17,9 +19,16 @@ module.exports = function() {
 		return randomChar() + randomChar() + randomNumber() + randomNumber() + randomNumber();
 	}
 
-	this.name = generateName();
-
-	this.reset = function() {
-		this.name = generateName();
+	return {
+		get name() {
+			if (name === "") { 
+				name = generateName();
+			}
+			return name;
+		},
+		reset : function() {
+			name = "";
+		}
 	};
+
 };
