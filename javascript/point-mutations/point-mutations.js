@@ -10,7 +10,7 @@ module.exports = function(sequence) {
 		var longerString = (shorterString === input ? sequence : input);
 
 		for (var i = 0; i < shorterString.length; i++) {
-			if (shorterString.charAt(i) !== longerString.charAt(i)) {
+			if (shorterString[i] !== longerString[i]) {
 				distance++;
 			}
 		}
