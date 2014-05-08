@@ -2,7 +2,7 @@
 
 (defn shouting? [input] 		
 	(and 
-		(every? #(or (not (Character/isLetter %)) (Character/isUpperCase %)) input)
+		(= (.toUpperCase input) input)
 		(some #(Character/isLetter %) input))
 )
 
